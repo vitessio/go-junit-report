@@ -87,7 +87,7 @@ func testRun(inputFile, reportFile string, config Config, t *testing.T) {
 	}
 
 	if diff := cmp.Diff(string(wantReport), output.String()); diff != "" {
-		t.Errorf("Unexpected report diff (-want, +got):\n%v", diff)
+		t.Errorf("Unexpected report diff (-want, +got):\n%v\n\n%v", diff, output.String())
 	}
 }
 
