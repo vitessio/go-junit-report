@@ -5,14 +5,6 @@ XML report, suitable for use with applications such as [Jenkins].
 
 [![Build status][github-actions-badge]][github-actions-link]
 
-The test output parser and JUnit XML report generator are also available as Go
-packages. This can be helpful if you want to create your own custom JUnit
-reports for example. See the package documentation on pkg.go.dev for more
-information:
-
-- [go-junit-report/v2/pkg/parser/gotest]
-- [go-junit-report/v2/pkg/junit]
-
 ## Installation
 
 Go version 1.17 or higher is required. Install or update using the `go get`
@@ -51,15 +43,6 @@ go test -json 2>&1 | go-junit-report -parser gojson > report.xml
 
 ```bash
 go test -v -bench . -count 5 2>&1 | go-junit-report -out report.xml
-```
-
-The `-iocopy` flag copies `stdin` directly to `stdout`, which is helpful if you
-want to see what was sent to go-junit-report. The following example reads test
-input from a file called `tests.txt`, copies the input to `stdout` and writes
-the output to a file called `report.xml`.
-
-```bash
-go-junit-report -in tests.txt -iocopy -out report.xml
 ```
 
 ### Declaration

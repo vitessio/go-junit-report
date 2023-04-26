@@ -1,4 +1,4 @@
-module github.com/vitessio/go-junit-report/v2
+module github.com/vitessio/go-junit-report
 
 go 1.17
 
