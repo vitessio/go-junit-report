@@ -21,9 +21,21 @@ const testDataDir = "../../testdata/"
 var matchTest = flag.String("match", "", "only test testdata matching this pattern")
 
 var testConfigs = map[int]Config{
+	1: {ExitCode: 1},
 	5: {SkipXMLHeader: true},
 	6: {SkipXMLHeader: true},
 	7: {PackageName: "test/package"},
+	8: {ExitCode: 1},
+	12: {ExitCode: 1},
+	17: {ExitCode: 1},
+	30: {ExitCode: 1},
+	36: {ExitCode: 1},
+	37: {ExitCode: 1},
+	101: {ExitCode: 1},
+	103: {ExitCode: 1},
+	104: {ExitCode: 1},
+	110: {ExitCode: 1},
+	112: {ExitCode: 1},
 }
 
 func TestRun(t *testing.T) {
@@ -76,8 +88,12 @@ func testRun(inputFile, reportFile string, config Config, t *testing.T) {
 	}
 
 	var output bytes.Buffer
-	if _, err := config.Run(input, &output); err != nil {
+	r, err := config.Run(input, &output)
+	if err != nil {
 		t.Fatal(err)
+	}
+	if config.ExitCode > 0 && r.Failures() < 1 {
+		t.Errorf("Unexpected exit code want: 1, got: 0")
 	}
 
 	if diff := cmp.Diff(string(wantReport), output.String()); diff != "" {

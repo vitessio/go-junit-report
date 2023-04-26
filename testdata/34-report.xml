@@ -1,32 +1,38 @@
-<testsuites>
-	<testsuite tests="2" failures="0" time="0.160" name="package/name1">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="8" failures="1">
+	<testsuite name="package/name1" tests="2" failures="0" errors="0" id="0" hostname="hostname" time="0.160" timestamp="2022-01-01T00:00:00Z">
 		<properties>
 			<property name="go.version" value="1.0"></property>
 		</properties>
-		<testcase classname="name1" name="TestOne" time="0.060"></testcase>
-		<testcase classname="name1" name="TestTwo" time="0.100"></testcase>
+		<testcase name="TestOne" classname="package/name1" time="0.060"></testcase>
+		<testcase name="TestTwo" classname="package/name1" time="0.100"></testcase>
 	</testsuite>
-	<testsuite tests="2" failures="1" time="0.151" name="package/name2">
+	<testsuite name="package/name2" tests="2" failures="1" errors="0" id="1" hostname="hostname" time="0.151" timestamp="2022-01-01T00:00:00Z">
 		<properties>
 			<property name="go.version" value="1.0"></property>
 		</properties>
-		<testcase classname="name2" name="TestOne" time="0.020">
-			<failure message="Failed" type="">file_test.go:11: Error message&#xA;file_test.go:11: Longer&#xA;&#x9;error&#xA;&#x9;message.</failure>
+		<testcase name="TestOne" classname="package/name2" time="0.020">
+			<failure message="Failed"></failure>
 		</testcase>
-		<testcase classname="name2" name="TestTwo" time="0.130"></testcase>
+		<testcase name="TestTwo" classname="package/name2" time="0.130"></testcase>
+		<system-out><![CDATA[	file_test.go:11: Error message
+	file_test.go:11: Longer
+		error
+		message.
+exit status 1]]></system-out>
 	</testsuite>
-	<testsuite tests="2" failures="0" time="0.150" name="package/name1">
+	<testsuite name="package/name1" tests="2" failures="0" errors="0" id="2" hostname="hostname" time="0.150" timestamp="2022-01-01T00:00:00Z">
 		<properties>
 			<property name="go.version" value="1.0"></property>
 		</properties>
-		<testcase classname="name1" name="TestOne" time="0.050"></testcase>
-		<testcase classname="name1" name="TestTwo" time="0.100"></testcase>
+		<testcase name="TestOne" classname="package/name1" time="0.050"></testcase>
+		<testcase name="TestTwo" classname="package/name1" time="0.100"></testcase>
 	</testsuite>
-	<testsuite tests="2" failures="0" time="0.200" name="package/name2">
+	<testsuite name="package/name2" tests="2" failures="0" errors="0" id="3" hostname="hostname" time="0.200" timestamp="2022-01-01T00:00:00Z">
 		<properties>
 			<property name="go.version" value="1.0"></property>
 		</properties>
-		<testcase classname="name2" name="TestOne" time="0.070"></testcase>
-		<testcase classname="name2" name="TestTwo" time="0.130"></testcase>
+		<testcase name="TestOne" classname="package/name2" time="0.070"></testcase>
+		<testcase name="TestTwo" classname="package/name2" time="0.130"></testcase>
 	</testsuite>
 </testsuites>

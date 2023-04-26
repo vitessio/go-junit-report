@@ -53,6 +53,42 @@ func (r *Report) IsSuccessful() bool {
 	return true
 }
 
+func (r *Report) Failures() int {
+	count := 0
+
+	pkgSeenZeroT := map[string]int{}
+	nameResult := map[string]Result{}
+	for _, p := range r.Packages {
+		if len(p.Tests) == 1 && p.Tests[0].Name == "Failure" {
+			pkgSeenZeroT[p.Name] = pkgSeenZeroT[p.Name] + 1
+		} else {
+			if seenCnt, exists := pkgSeenZeroT[p.Name]; exists {
+				count = count - seenCnt
+				pkgSeenZeroT[p.Name] = 0
+			}
+		}
+		for _, t := range p.Tests {
+			key := p.Name + "$$" + t.Name
+			if res, exists := nameResult[key]; !exists {
+				if t.Result == Fail {
+					count = count + 1
+				}
+				nameResult[key] = t.Result
+			} else {
+				if res == Pass {
+					continue
+				}
+				if t.Result == Pass {
+					count = count - 1
+					nameResult[key] = Pass
+				}
+			}
+		}
+	}
+
+	return count
+}
+
 // Package contains build and test results for a single package.
 type Package struct {
 	Name       string

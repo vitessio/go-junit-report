@@ -4,8 +4,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jstemmer/go-junit-report/v2/gtr"
-	"github.com/jstemmer/go-junit-report/v2/parser/gotest/internal/collector"
+	"github.com/vitessio/go-junit-report/gtr"
+	"github.com/vitessio/go-junit-report/parser/gotest/internal/collector"
 )
 
 const (

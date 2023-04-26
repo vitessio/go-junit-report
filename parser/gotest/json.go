@@ -6,7 +6,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/jstemmer/go-junit-report/v2/gtr"
+	"github.com/vitessio/go-junit-report/gtr"
 )
 
 // NewJSONParser returns a new Go test json output parser.
