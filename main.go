@@ -109,7 +109,7 @@ func main() {
 		exitf("error: %v\n", err)
 	}
 
-	if *setExitCode && !report.IsSuccessful() {
+	if *setExitCode && report.Failures() > 0 {
 		os.Exit(1)
 	}
 }
