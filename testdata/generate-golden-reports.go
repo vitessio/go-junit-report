@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/jstemmer/go-junit-report/v2/internal/gojunitreport"
+	"github.com/vitessio/go-junit-report/internal/gojunitreport"
 )
 
 var verbose bool

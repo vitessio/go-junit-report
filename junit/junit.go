@@ -75,7 +75,7 @@ func (t *Testsuite) AddTestcase(tc Testcase) {
 	t.Testcases = append(t.Testcases, tc)
 	t.Tests += 1
 
-	if tc.Error != nil && tc.Error.Message != "No test result found" {
+	if tc.Error != nil {
 		t.Errors += 1
 	}
 
