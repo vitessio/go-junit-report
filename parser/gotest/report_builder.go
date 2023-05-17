@@ -278,10 +278,17 @@ func (b *reportBuilder) findTest(name string) (int, bool) {
 	if t, ok := b.tests[b.lastID]; ok && t.Name == name {
 		return b.lastID, true
 	}
+	firstMatch := -1
 	for i := b.nextID; i > 0; i-- {
 		if test, ok := b.tests[i]; ok && test.Name == name {
-			return i, true
+			firstMatch = i
+			if test.Result == gtr.Unknown {
+				return i, true
+			}
 		}
+	}
+	if firstMatch != -1 {
+		return firstMatch, true
 	}
 	return 0, false
 }
