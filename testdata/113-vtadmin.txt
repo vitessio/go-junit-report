@@ -1,0 +1,55 @@
+=== RUN   TestFindSchema
+=== PAUSE TestFindSchema
+=== RUN   TestFindSchema
+=== PAUSE TestFindSchema
+=== CONT  TestFindSchema
+=== RUN   TestFindSchema/exact_match
+=== PAUSE TestFindSchema/exact_match
+=== RUN   TestFindSchema/error_getting_tablets
+=== PAUSE TestFindSchema/error_getting_tablets
+=== RUN   TestFindSchema/error_getting_keyspaces
+=== PAUSE TestFindSchema/error_getting_keyspaces
+=== RUN   TestFindSchema/error_getting_schemas
+=== PAUSE TestFindSchema/error_getting_schemas
+=== RUN   TestFindSchema/no_schema_found
+=== PAUSE TestFindSchema/no_schema_found
+=== RUN   TestFindSchema/ambiguous_schema_errors
+=== PAUSE TestFindSchema/ambiguous_schema_errors
+=== RUN   TestFindSchema/ambiguous_schema_with_request_scoped_to_single_cluster_passes
+=== PAUSE TestFindSchema/ambiguous_schema_with_request_scoped_to_single_cluster_passes
+=== RUN   TestFindSchema/size_aggregation
+=== PAUSE TestFindSchema/size_aggregation
+=== CONT  TestFindSchema
+=== RUN   TestFindSchema/unauthorized_actor
+=== PAUSE TestFindSchema/unauthorized_actor
+=== RUN   TestFindSchema/partial_access
+=== PAUSE TestFindSchema/partial_access
+=== RUN   TestFindSchema/full_access
+=== PAUSE TestFindSchema/full_access
+=== CONT  TestFindSchema/exact_match
+=== CONT  TestFindSchema/ambiguous_schema_errors
+=== CONT  TestFindSchema/size_aggregation
+=== CONT  TestFindSchema/ambiguous_schema_with_request_scoped_to_single_cluster_passes
+=== CONT  TestFindSchema/error_getting_schemas
+=== CONT  TestFindSchema/no_schema_found
+=== CONT  TestFindSchema/error_getting_keyspaces
+=== CONT  TestFindSchema/error_getting_tablets
+--- PASS: TestFindSchema (0.00s)
+    --- PASS: TestFindSchema/exact_match (0.00s)
+    --- PASS: TestFindSchema/ambiguous_schema_errors (0.00s)
+    --- PASS: TestFindSchema/size_aggregation (0.00s)
+    --- PASS: TestFindSchema/ambiguous_schema_with_request_scoped_to_single_cluster_passes (0.00s)
+    --- PASS: TestFindSchema/error_getting_schemas (0.00s)
+    --- PASS: TestFindSchema/no_schema_found (0.00s)
+    --- PASS: TestFindSchema/error_getting_tablets (0.00s)
+    --- PASS: TestFindSchema/error_getting_keyspaces (0.00s)
+=== CONT  TestFindSchema/unauthorized_actor
+=== CONT  TestFindSchema/full_access
+=== CONT  TestFindSchema/partial_access
+--- PASS: TestFindSchema (0.00s)
+    --- PASS: TestFindSchema/full_access (0.00s)
+    --- PASS: TestFindSchema/partial_access (0.00s)
+    --- PASS: TestFindSchema/unauthorized_actor (0.01s)
+=== CONT  TestCreateKeyspac
+PASS
+ok  	vitess.io/vitess/go/vt/vtadmin	0.223s

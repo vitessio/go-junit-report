@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="13">
+	<testsuite name="vitess.io/vitess/go/vt/vtadmin" tests="13" failures="0" errors="0" id="0" hostname="hostname" time="0.223" timestamp="2022-01-01T00:00:00Z">
+		<properties>
+			<property name="go.version" value="1.0"></property>
+		</properties>
+		<testcase name="TestFindSchema" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/exact_match" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/error_getting_tablets" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/error_getting_keyspaces" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/error_getting_schemas" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/no_schema_found" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/ambiguous_schema_errors" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/ambiguous_schema_with_request_scoped_to_single_cluster_passes" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/size_aggregation" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/unauthorized_actor" classname="vitess.io/vitess/go/vt/vtadmin" time="0.010"></testcase>
+		<testcase name="TestFindSchema/partial_access" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+		<testcase name="TestFindSchema/full_access" classname="vitess.io/vitess/go/vt/vtadmin" time="0.000"></testcase>
+	</testsuite>
+</testsuites>
