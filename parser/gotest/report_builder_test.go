@@ -56,3 +56,24 @@ func TestGroupBenchmarksByName(t *testing.T) {
 		})
 	}
 }
+
+func TestFindTestDuplicate(t *testing.T) {
+	b := newReportBuilder()
+	b.tests[0] = gtr.NewTest(0, "TestMy")
+	b.tests[1] = gtr.NewTest(1, "TestMy")
+	b.tests[2] = gtr.NewTest(2, "TestToto")
+	b.lastID = 2
+
+	if id, found := b.findTest("TestMy"); !found || id != 1 {
+		t.Errorf("should have found TestMy with ID: 1, got: id=%d, found=%v", id, found)
+	}
+	b.tests[1] = gtr.Test{
+		ID:     1,
+		Name:   "TestMy",
+		Result: gtr.Pass,
+	}
+
+	if id, found := b.findTest("TestMy"); !found || id != 0 {
+		t.Errorf("should have found TestMy with ID: 0, got: id=%d, found=%v", id, found)
+	}
+}

@@ -217,12 +217,10 @@ func createTestcaseForTest(pkgName string, test gtr.Test) Testcase {
 			Data:    formatOutput(test.Output, test.Level),
 		}
 	} else if test.Result == gtr.Unknown {
-		// We do not want to report "No test result found" errors in the XML file
-		// as they will anyway appear as errors and fail the overall test.
-		// tc.Error = &Result{
-		// 	Message: "No test result found",
-		// 	Data:    formatOutput(test.Output, test.Level),
-		// }
+		tc.Error = &Result{
+			Message: "No test result found",
+			Data:    formatOutput(test.Output, test.Level),
+		}
 	} else if len(test.Output) > 0 {
 		tc.SystemOut = &Output{Data: formatOutput(test.Output, test.Level)}
 	}
