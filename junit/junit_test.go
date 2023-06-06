@@ -48,14 +48,14 @@ func TestCreateFromReport(t *testing.T) {
 
 	want := Testsuites{
 		Tests:    6,
-		Errors:   3,
+		Errors:   2,
 		Failures: 1,
 		Skipped:  1,
 		Suites: []Testsuite{
 			{
 				Name:      "package/name",
 				Tests:     6,
-				Errors:    3,
+				Errors:    2,
 				ID:        0,
 				Failures:  1,
 				Skipped:   1,
@@ -88,7 +88,6 @@ func TestCreateFromReport(t *testing.T) {
 						Name:      "TestIncomplete",
 						Classname: "package/name",
 						Time:      "0.000",
-						Error:     &Result{Message: "No test result found"},
 					},
 					{
 						Classname: "Build error",
